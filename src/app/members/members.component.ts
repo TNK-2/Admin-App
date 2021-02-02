@@ -23,6 +23,10 @@ export class MembersComponent implements OnInit {
   }
 
   getMembers(): void {
-    this.members = this.memberService.getMembers();
+    this.memberService.getMembers()
+      .subscribe(members => {
+        console.log(members)
+        this.members = members
+      });
   }
 }
