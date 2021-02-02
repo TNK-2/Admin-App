@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { MembersComponent } from './members/members.component';
 import { from } from 'rxjs';
 import { MemberDetailComponent } from './member-detail/member-detail.component';
+import { MesssagesComponent } from './messsages/messsages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MembersComponent,
-    MemberDetailComponent
+    MemberDetailComponent,
+    MesssagesComponent
   ],
   imports: [
     BrowserModule,
