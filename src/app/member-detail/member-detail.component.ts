@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Member } from '../member';
@@ -13,8 +14,8 @@ export class MemberDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private memberService: MemberService
-    // private location: Location
+    private memberService: MemberService,
+    private location: Location
   ) { }
 
   ngOnInit(): void {
@@ -25,6 +26,10 @@ export class MemberDetailComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.memberService.getMember(id)
       .subscribe(member => this.member = member);
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }
