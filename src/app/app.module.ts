@@ -6,6 +6,7 @@ import { MembersComponent } from './members/members.component';
 import { from } from 'rxjs';
 import { MemberDetailComponent } from './member-detail/member-detail.component';
 import { MesssagesComponent } from './messsages/messsages.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MesssagesComponent } from './messsages/messsages.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
