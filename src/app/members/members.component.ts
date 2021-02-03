@@ -29,9 +29,6 @@ export class MembersComponent implements OnInit {
 
   getMembers(): void {
     this.memberService.getMembers()
-      .subscribe(members => {
-        console.log(members)
-        this.members = members
-      });
+      .subscribe(members => this.members = members);
   }
 }
