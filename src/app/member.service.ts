@@ -45,6 +45,14 @@ export class MemberService {
       )
   }
 
+  addMember(member: Member): Observable<Member>{
+    return this.http.post<Member>(this.membersUrl, member, this.httpOptions)
+      .pipe(
+        tap((newMember: Member) => this.log(`社員データ(id=${newMember.id})をついかしました。`)),
+        catchError(this.handleError<any>('updataMember'))
+      );
+  }
+
   private log(message: String) {
     this.messageService.add(`MemberService: ${message}`);
   }
@@ -54,6 +62,6 @@ export class MemberService {
       console.error(error);
       this.log(`${operation} 失敗 : ${error.message}`);
       return of(result as T);
-    }
+    };
   }
 }
